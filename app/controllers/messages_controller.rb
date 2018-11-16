@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :find_message, only: [:show, :edit, :update, :destroy]
+
 
 
   def index
@@ -6,7 +8,8 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+
+
   end
 
   def new
@@ -23,10 +26,20 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit   
+  end
+
   def update
+    if @message.update(message_params)
+      redirect_to message_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @message.destroy
+    redirect_to root_path
   end
 
   private
@@ -36,7 +49,7 @@ class MessagesController < ApplicationController
   end
 
   def find_message
-    @message = Item.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
 
