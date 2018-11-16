@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :messages #creates all routes for app
+  root 'messages#index' #initial page of app responds to message controller, index action
+
 end
