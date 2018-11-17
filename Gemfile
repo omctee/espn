@@ -46,6 +46,7 @@ gem 'rails-ujs', '~> 0.1.0'
 #gem 'paperclip', '~>4.2.0'
 #gem 'paperclip', '~> 6.0.0'
 #gem 'acts_as_votable', '~> 0.12.0'
+#gem 'sinatra', '~> 2.0', '>= 2.0.4'
 # #### ####################################
 
 group :development, :test do
